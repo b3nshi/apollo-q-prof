@@ -1,5 +1,5 @@
 import { ILogger } from "../interfaces/logger";
-import fs from "fs";
+import { writeFile, readFile } from "fs";
 
 class JSONLogger implements ILogger {
   private static _instance: JSONLogger;
@@ -27,9 +27,9 @@ class JSONLogger implements ILogger {
   }
 
   printOutput() {
-    const fileName = `apollo-prof/apollo-prof.json`;
+    const fileName = `apollo-prof.json`;
 
-    fs.readFile(fileName, "utf8", (err, data) => {
+    readFile(fileName, "utf8", (err, data) => {
       let newData = [this.data];
       if (!err) {
         newData = [
@@ -38,7 +38,7 @@ class JSONLogger implements ILogger {
         ];
       }
 
-      fs.writeFile(fileName, JSON.stringify(newData), "utf8", err => {
+      writeFile(fileName, JSON.stringify(newData), "utf8", err => {
         if (err) {
           console.error("There was an error trying to create the file", err);
         }
