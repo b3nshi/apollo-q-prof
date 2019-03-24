@@ -1,0 +1,254 @@
+[
+  {
+    "outgoingRequests": [
+      {
+        "args": "[ 'de_AT', [ 'web2-4045761' ] ]",
+        "execution-time": "0.6804909706115723ms",
+        "method": "getCategoriesDetails",
+        "dataSource": "GazelleApi"
+      }
+    ],
+    "request": {
+      "operationName": null,
+      "variables": {},
+      "query": "{\n  categoryPage(id: \"web2-4045761\") {\n    assets {\n      images {\n        id\n        description\n        tiny\n        small\n        normal\n        large\n        alt\n        attributeMappings {\n          symbol\n          ids\n        }\n      }\n      safetySheets {\n        id\n        resourceLocation\n        title\n      }\n      documents {\n        id\n        resourceLocation\n        title\n      }\n      videos {\n        id\n        youtubeId\n        title\n      }\n    }\n  }\n}\n"
+    },
+    "response": {
+      "execution-time": "10.304279088973999ms"
+    }
+  },
+  {
+    "outgoingRequests": [
+      {
+        "args": "[ 'de_AT', 'web2-4045761' ]",
+        "execution-time": "0.5691530704498291ms",
+        "method": "getCategoryPath",
+        "dataSource": "GazelleApi"
+      },
+      {
+        "args": "[ 'de_AT', [ 'web1-4045065', 'web2-4045773' ] ]",
+        "execution-time": "0.4634910821914673ms",
+        "method": "getCategoriesDetails",
+        "dataSource": "GazelleApi"
+      }
+    ],
+    "request": {
+      "operationName": null,
+      "variables": {},
+      "query": "{\n  categoryPage(id: \"web2-4045761\") {\n    breadcrumbs {\n      id\n      title\n    }\n  }\n}\n"
+    },
+    "response": {
+      "execution-time": "9.025138020515442ms"
+    }
+  },
+  {
+    "outgoingRequests": [
+      {
+        "args": "[ 'de_AT', 'web2-4045761' ]",
+        "execution-time": "1.0987050533294678ms",
+        "method": "getCategoryHierarchy",
+        "dataSource": "GazelleApi"
+      },
+      {
+        "args": "[ 'de_AT',\n  [ 'web2-4045774',\n    'web2-4045777',\n    'web2-4045914',\n    'web2-4045821',\n    'web2-4045779',\n    'web2-4045785',\n    'web2-4045778',\n    'web2-4045773' ] ]",
+        "execution-time": "0.6496009826660156ms",
+        "method": "getCategoriesDetails",
+        "dataSource": "GazelleApi"
+      }
+    ],
+    "request": {
+      "operationName": null,
+      "variables": {},
+      "query": "{\n  categoryPage(id: \"web2-4045761\") {\n    links {\n      id\n      title\n      image {\n        tiny\n        small\n        normal\n        large\n        alt\n      }\n    }\n  }\n}\n"
+    },
+    "response": {
+      "execution-time": "12.349774956703186ms"
+    }
+  },
+  {
+    "outgoingRequests": [
+      {
+        "args": "[ 'de_AT', 'U19MGP' ]",
+        "execution-time": "1.0956109762191772ms",
+        "method": "getItemPath",
+        "dataSource": "GazelleApi"
+      },
+      {
+        "args": "[ 'de_AT', [ 'U19MGP' ] ]",
+        "execution-time": "1.1090790033340454ms",
+        "method": "getItems",
+        "dataSource": "CiskeAPI"
+      },
+      {
+        "args": "[ 'de_AT', [ 'U19MGP' ] ]",
+        "execution-time": "0.4431939125061035ms",
+        "method": "getItems",
+        "dataSource": "CiskeAPI"
+      },
+      {
+        "args": "[ 'de_AT', [ 'U19MGP' ] ]",
+        "execution-time": "0.8843300342559814ms",
+        "method": "getHasVolumeDiscounts",
+        "dataSource": "DagobertApi"
+      },
+      {
+        "args": "[ 'de_AT', [ 'U19MGP' ], '$' ]",
+        "execution-time": "0.9911320209503174ms",
+        "method": "getGrossPrices",
+        "dataSource": "DagobertApi"
+      },
+      {
+        "args": "[ 'de_AT', 'web2-4045821' ]",
+        "execution-time": "0.598770022392273ms",
+        "method": "getCategoryPath",
+        "dataSource": "GazelleApi"
+      },
+      {
+        "args": "[ 'de_AT', [ 'web1-4045065', 'web2-4045773' ] ]",
+        "execution-time": "0.48922300338745117ms",
+        "method": "getCategoriesDetails",
+        "dataSource": "GazelleApi"
+      }
+    ],
+    "request": {
+      "operationName": null,
+      "variables": {},
+      "query": "{\n  productPage(id: \"U19MGP\") {\n    id\n    breadcrumbs {\n      id\n      title\n    }\n    navigation {\n      resolvedCategoryId\n      previous {\n        type\n        id\n      }\n      next {\n        type\n        id\n      }\n    }\n    product(currency: \"$\") {\n      id\n      description\n      quantityUnit {\n        id\n        content\n        symbol\n      }\n      brand {\n        id\n        name\n        logo {\n          tiny\n          alt\n        }\n      }\n      productGroup {\n        id\n        name\n        type\n        description\n        image {\n          tiny\n          alt\n        }\n        brand {\n          id\n          name\n          logo {\n            tiny\n            alt\n          }\n        }\n        attributes {\n          id\n          attributeId\n          key\n          values\n          unit {\n            id\n            content\n            symbol\n          }\n          dataType\n          sortOrder\n        }\n      }\n      spareParts {\n        id\n        product(currency: \"$\") {\n          id\n          brand {\n            id\n            name\n          }\n        }\n        price(currency: \"$\") {\n          grossPrice\n          currency\n          hasVolumeDiscounts\n        }\n      }\n      alternatives {\n        id\n        product(currency: \"$\") {\n          id\n          brand {\n            id\n            name\n          }\n        }\n        price(currency: \"$\") {\n          grossPrice\n          currency\n          hasVolumeDiscounts\n        }\n      }\n      accessories {\n        id\n        product(currency: \"$\") {\n          id\n          brand {\n            id\n            name\n          }\n        }\n        price(currency: \"$\") {\n          grossPrice\n          currency\n          hasVolumeDiscounts\n        }\n      }\n      images {\n        id\n        description\n        tiny\n        small\n        normal\n        large\n        alt\n        attributeMappings {\n          symbol\n          ids\n        }\n      }\n      safetySheets {\n        id\n        resourceLocation\n        title\n      }\n      documents {\n        id\n        resourceLocation\n        title\n      }\n      videos {\n        id\n        youtubeId\n        title\n      }\n      name\n      currency\n      roundingQuantity\n      minimumQuantity\n      grossPrice\n      hasVolumeDiscounts\n      replaces\n      replacedBy {\n        id\n        product {\n          id\n          name\n          description\n        }\n      }\n      classifications {\n        code\n        value\n      }\n    }\n  }\n}\n"
+    },
+    "response": {
+      "execution-time": "48.78087091445923ms"
+    }
+  },
+  {
+    "outgoingRequests": [
+      {
+        "args": "[ 'de_AT', 'U19MGP' ]",
+        "execution-time": "0.5207129716873169ms",
+        "method": "getItemPath",
+        "dataSource": "GazelleApi"
+      },
+      {
+        "args": "[ 'de_AT', [ 'U19MGP' ] ]",
+        "execution-time": "0.3595010042190552ms",
+        "method": "getItems",
+        "dataSource": "CiskeAPI"
+      },
+      {
+        "args": "[ 'de_AT', [ 'U19MGP' ] ]",
+        "execution-time": "0.3914879560470581ms",
+        "method": "getItems",
+        "dataSource": "CiskeAPI"
+      },
+      {
+        "args": "[ 'de_AT', [ 'U19MGP' ] ]",
+        "execution-time": "0.3551139831542969ms",
+        "method": "getHasVolumeDiscounts",
+        "dataSource": "DagobertApi"
+      },
+      {
+        "args": "[ 'de_AT', [ 'U19MGP' ], '$' ]",
+        "execution-time": "0.349761962890625ms",
+        "method": "getGrossPrices",
+        "dataSource": "DagobertApi"
+      },
+      {
+        "args": "[ 'de_AT', 'web2-4045821' ]",
+        "execution-time": "0.3821629285812378ms",
+        "method": "getCategoryPath",
+        "dataSource": "GazelleApi"
+      },
+      {
+        "args": "[ 'de_AT', [ 'web1-4045065', 'web2-4045773' ] ]",
+        "execution-time": "0.45956897735595703ms",
+        "method": "getCategoriesDetails",
+        "dataSource": "GazelleApi"
+      }
+    ],
+    "request": {
+      "operationName": null,
+      "variables": {},
+      "query": "{\n  productPage(id: \"U19MGP\") {\n    id\n    breadcrumbs {\n      id\n      title\n    }\n    navigation {\n      resolvedCategoryId\n      previous {\n        type\n        id\n      }\n      next {\n        type\n        id\n      }\n    }\n    product(currency: \"$\") {\n      id\n      description\n      quantityUnit {\n        id\n        content\n        symbol\n      }\n      brand {\n        id\n        name\n        logo {\n          tiny\n          alt\n        }\n      }\n      productGroup {\n        id\n        name\n        type\n        description\n        image {\n          tiny\n          alt\n        }\n        brand {\n          id\n          name\n          logo {\n            tiny\n            alt\n          }\n        }\n        attributes {\n          id\n          attributeId\n          key\n          values\n          unit {\n            id\n            content\n            symbol\n          }\n          dataType\n          sortOrder\n        }\n      }\n      spareParts {\n        id\n        product(currency: \"$\") {\n          id\n          brand {\n            id\n            name\n          }\n        }\n        price(currency: \"$\") {\n          grossPrice\n          currency\n          hasVolumeDiscounts\n        }\n      }\n      alternatives {\n        id\n        product(currency: \"$\") {\n          id\n          brand {\n            id\n            name\n          }\n        }\n        price(currency: \"$\") {\n          grossPrice\n          currency\n          hasVolumeDiscounts\n        }\n      }\n      accessories {\n        id\n        product(currency: \"$\") {\n          id\n          brand {\n            id\n            name\n          }\n        }\n        price(currency: \"$\") {\n          grossPrice\n          currency\n          hasVolumeDiscounts\n        }\n      }\n      images {\n        id\n        description\n        tiny\n        small\n        normal\n        large\n        alt\n        attributeMappings {\n          symbol\n          ids\n        }\n      }\n      safetySheets {\n        id\n        resourceLocation\n        title\n      }\n      documents {\n        id\n        resourceLocation\n        title\n      }\n      videos {\n        id\n        youtubeId\n        title\n      }\n      name\n      currency\n      roundingQuantity\n      minimumQuantity\n      grossPrice\n      hasVolumeDiscounts\n      replaces\n      replacedBy {\n        id\n        product {\n          id\n          name\n          description\n        }\n      }\n      classifications {\n        code\n        value\n      }\n    }\n  }\n}\n"
+    },
+    "response": {
+      "execution-time": "21.339072942733765ms"
+    }
+  },
+  {
+    "outgoingRequests": [
+      {
+        "args": "[ 'de_AT', 'web2-4045761', 1, 60, [] ]",
+        "execution-time": "2.1063441038131714ms",
+        "method": "getItemsInCategory",
+        "dataSource": "SherlockApi"
+      },
+      {
+        "args": "[ 'de_AT',\n  [ '100100', '803251', '1GA998532011', '725103115A722' ] ]",
+        "execution-time": "0.7415820360183716ms",
+        "method": "getItems",
+        "dataSource": "CiskeAPI"
+      },
+      {
+        "args": "[ 'de_AT',\n  [ '100100', '803251', '1GA998532011', '725103115A722' ] ]",
+        "execution-time": "0.7204509973526001ms",
+        "method": "getHasVolumeDiscounts",
+        "dataSource": "DagobertApi"
+      },
+      {
+        "args": "[ 'de_AT',\n  [ '100100', '803251', '1GA998532011', '725103115A722' ],\n  '$' ]",
+        "execution-time": "0.7114139795303345ms",
+        "method": "getGrossPrices",
+        "dataSource": "DagobertApi"
+      },
+      {
+        "args": "[ 'de_AT', [ '725103115A722' ] ]",
+        "execution-time": "0.4707430601119995ms",
+        "method": "getItems",
+        "dataSource": "CiskeAPI"
+      }
+    ],
+    "request": {
+      "operationName": null,
+      "variables": {},
+      "query": "{\n  categoryPage(id: \"web2-4045761\") {\n    products(page: 1, pageSize: 60, facetValues: []) {\n      pagination {\n        page\n        totalPages\n        totalResults\n        maxScore\n      }\n      results(currency: \"$\") {\n        id\n        description\n        quantityUnit {\n          id\n          content\n          symbol\n        }\n        brand {\n          id\n          name\n          logo {\n            tiny\n            alt\n          }\n        }\n        productGroup {\n          id\n          name\n          type\n          description\n          image {\n            tiny\n            alt\n          }\n          brand {\n            id\n            name\n            logo {\n              tiny\n              alt\n            }\n          }\n          attributes {\n            id\n            attributeId\n            key\n            values\n            unit {\n              id\n              content\n              symbol\n            }\n            dataType\n            sortOrder\n          }\n        }\n        images {\n          id\n          description\n          tiny\n          small\n          normal\n          large\n          alt\n          attributeMappings {\n            symbol\n            ids\n          }\n        }\n        safetySheets {\n          id\n          resourceLocation\n          title\n        }\n        documents {\n          id\n          resourceLocation\n          title\n        }\n        videos {\n          id\n          youtubeId\n          title\n        }\n        name\n        currency\n        roundingQuantity\n        minimumQuantity\n        grossPrice\n        hasVolumeDiscounts\n        replaces\n        replacedBy {\n          id\n          product {\n            id\n            name\n            description\n          }\n        }\n        classifications {\n          code\n          value\n        }\n      }\n    }\n  }\n}\n"
+    },
+    "response": {
+      "execution-time": "48.16144597530365ms"
+    }
+  },
+  {
+    "outgoingRequests": [
+      {
+        "args": "[ 'de_AT', 'web2-4045761', 60, 1 ]",
+        "execution-time": "1.0711090564727783ms",
+        "method": "getEntriesInCategory",
+        "dataSource": "SherlockApi"
+      },
+      {
+        "args": "[ 'de_AT',\n  [ 'ticItemGroup-47687370',\n    'ticItemGroup-47687380',\n    'ticItemGroup-47687381' ] ]",
+        "execution-time": "1.6083190441131592ms",
+        "method": "getVariants",
+        "dataSource": "CiskeAPI"
+      },
+      {
+        "args": "[ 'de_AT',\n  [ 'iccItemContainer-4161619',\n    'iccItemContainer-4158644',\n    'iccItemContainer-4158645',\n    'iccItemContainer-4158646' ] ]",
+        "execution-time": "1.373613953590393ms",
+        "method": "getComponents",
+        "dataSource": "CiskeAPI"
+      },
+      {
+        "args": "[ 'de_AT', [ '100100' ] ]",
+        "execution-time": "1.5095150470733643ms",
+        "method": "getItemsAsProductGroups",
+        "dataSource": "CiskeAPI"
+      }
+    ],
+    "request": {
+      "operationName": null,
+      "variables": {},
+      "query": "{\n  categoryPage(id: \"web2-4045761\") {\n    productGroups(page: 1, pageSize: 60) {\n      results {\n        id\n        description\n        brand {\n          id\n          name\n          logo {\n            tiny\n            alt\n          }\n        }\n        image {\n          tiny\n          alt\n        }\n        images {\n          id\n          description\n          tiny\n          small\n          normal\n          large\n          alt\n          attributeMappings {\n            symbol\n            ids\n          }\n        }\n        safetySheets {\n          id\n          resourceLocation\n          title\n        }\n        documents {\n          id\n          resourceLocation\n          title\n        }\n        videos {\n          id\n          youtubeId\n          title\n        }\n        name\n        type\n        attributes {\n          id\n          attributeId\n          unit {\n            id\n            content\n            symbol\n          }\n          dataType\n          key\n          values\n          sortOrder\n        }\n      }\n    }\n  }\n}\n"
+    },
+    "response": {
+      "execution-time": "33.404621958732605ms"
+    }
+  }
+]

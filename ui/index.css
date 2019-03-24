@@ -1,0 +1,146 @@
+* {
+  box-sizing: border-box;
+  font-size: 12px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #172a3a;
+  color: #fff;
+}
+
+.file-chooser {
+  border-bottom: 1px solid #ccc;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 32px;
+  text-align: center;
+  width: 100%;
+}
+
+#records {
+  margin: 0;
+  padding: 0;
+}
+
+.request {
+  width: 100%;
+  padding: 5px 0 5px 25px;
+  position: relative;
+  margin: 0;
+  border-bottom: 1px solid #fff;
+}
+
+.request .trigger {
+  cursor: pointer;
+  border-radius: 50%;
+  width: 15px;
+  height: 15px;
+  background-color: rgb(44, 108, 128);
+  position: absolute;
+  left: 3px;
+  top: 11px;
+}
+
+.request .trigger::after {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  height: 2px;
+  margin-top: -.5px;
+  top: 50%;
+  left: .5px;
+  right: .5px;
+  z-index: 9;
+}
+
+.request:not(.active) .trigger::before {
+  content: " ";
+  position: absolute;
+  display: block;
+  background-color: #fff;
+  width: 2px;
+  margin-left: -.5px;
+  left: 50%;
+  top: .5px;
+  bottom: .5px;
+  z-index: 9;
+}
+
+.request .title {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  line-height: 32px;
+}
+
+.request .title > div:last-child {
+  padding-right: 40px;
+}
+
+.request:not(.active) > .content {
+  display: none;
+}
+
+.request.active > .title {
+  border-bottom: 1px solid #aaa;
+  margin-bottom: 5px;
+}
+
+.request.active > .content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.content .info {
+  flex: 2;
+}
+
+.content .outgoing {
+  flex: 3;
+  background: rgb(23, 43, 58);
+  padding: 0 15px;
+}
+
+.content .outgoing .out {
+  background: rgb(20, 24, 35);
+  display: flex;
+  margin-bottom: 3px;
+  line-height: 24px;
+}
+
+.content .outgoing .out:last-child {
+  margin-bottom: 0;
+}
+
+.outgoing .out .data-source,
+.outgoing .out .method,
+.outgoing .out .arguments,
+.outgoing .out .execution-time {
+  flex: 1;
+  padding: 0 5px;
+  color: rgb(241, 143, 1);
+}
+
+.outgoing .out .method {
+  color: rgb(56, 189, 193);
+}
+
+.outgoing .out .arguments {
+  color: rgb(214, 66, 146);
+}
+
+/* Special data type */
+.time,
+.query {
+  margin: 0 5px;
+  padding: 4px 5px;
+  background: rgb(20, 24, 35);
+  color: rgb(41, 185, 115);
+}
+
+.execution-time {
+  color: rgb(185, 41, 115);
+}

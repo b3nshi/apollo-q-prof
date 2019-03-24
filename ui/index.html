@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="file-chooser">
+      <label>
+        Choose the file to load:
+        <input type="file" id="file-loader"/>
+      </label>
+
+    </div>
+    <ul id="records">
+      <li class="request active">
+        <div class="content">
+          <div class="info">
+            Query
+          </div>
+          <div class="outgoing">
+            <div class="out">
+                <span class="data-source">Data source</span>
+                <span class="method">Method</span>
+                <span class="arguments">Parameters</span>
+                <span class="execution-time">Execution time</span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <script src="render.js"></script>
+  </body>
+</html>
