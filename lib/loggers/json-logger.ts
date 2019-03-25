@@ -27,7 +27,7 @@ class JSONLogger implements ILogger {
   }
 
   printOutput() {
-    const fileName = `apollo-prof.json`;
+    const fileName = `apollo-q-prof.json`;
 
     readFile(fileName, "utf8", (err, data) => {
       let newData = [this.data];

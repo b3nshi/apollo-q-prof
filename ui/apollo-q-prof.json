@@ -1,0 +1,18 @@
+[
+  {
+    "outgoingRequests": [{
+      "args": "[ arg1, arg2, ... ,argN ]",
+      "dataSource": "dataSourceName",
+      "execution-time": "10ms",
+      "method": "methodName"
+    }],
+    "request": {
+      "operationName": null,
+      "variables": {},
+      "query": "{ someQuery }"
+    },
+    "response": {
+      "execution-time": "0ms"
+    }
+  }
+]

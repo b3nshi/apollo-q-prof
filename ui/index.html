@@ -8,9 +8,26 @@
         Choose the file to load:
         <input type="file" id="file-loader"/>
       </label>
-
+      <input type="button" value="Refresh" id="btn-refresh" disabled>
     </div>
-    <ul id="records">
+    <ul class="records">
+      <li class="request active">
+        <div class="content">
+          <div class="info">
+            Query
+          </div>
+          <div class="outgoing">
+            <div class="out">
+                <span class="data-source">Data source</span>
+                <span class="method">Method</span>
+                <span class="arguments">Parameters</span>
+                <span class="execution-time">Execution time</span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul id="records" class="records">
       <li class="request active">
         <div class="content">
           <div class="info">

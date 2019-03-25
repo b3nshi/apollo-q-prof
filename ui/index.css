@@ -18,7 +18,20 @@ body {
   width: 100%;
 }
 
-#records {
+#btn-refresh {
+  color: #333;
+  background: rgb(41, 185, 115);
+  border: 1px solid;
+}
+
+#btn-refresh:disabled {
+  background: rgba(41, 185, 115, .4);
+  border: 1px solid;
+  color: #333;
+  cursor: pointer;
+}
+
+.records {
   margin: 0;
   padding: 0;
 }
