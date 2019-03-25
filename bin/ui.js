@@ -10,7 +10,7 @@ http.createServer(function (req, res) {
   console.log(`${req.method} ${req.url}`);
 
   const parsedUrl = url.parse(req.url);
-  let pathname = `./ui${parsedUrl.pathname === '/' ? '/index.html' : parsedUrl.pathname}`;
+  let pathname = `${__dirname}/../ui${parsedUrl.pathname === '/' ? '/index.html' : parsedUrl.pathname}`;
   
   const ext = path.parse(pathname).ext;
   
