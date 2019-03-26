@@ -14,7 +14,10 @@ export const ApolloQProf  = (
   let wrappedDataSources: any;
   
   if (apolloConfig.dataSources) {
-    const dataSources = apolloConfig.dataSources();
+    const dataSources =
+      (apolloConfig.dataSources instanceof Function) ?
+        apolloConfig.dataSources() :
+        apolloConfig.dataSources;
     wrappedDataSources = Object.keys(dataSources)
       .reduce((wrap, dataSource) => {
         if (dataSources.hasOwnProperty(dataSource)) {
@@ -42,8 +45,10 @@ export const ApolloQProf  = (
         ...params.req.body
       });
 
+      const userContext = apolloConfig.context ? apolloConfig.context(params) : {};
+      
       return {
-        ...apolloConfig.context(params),
+        ...userContext,
         hrstart
       };
     },
