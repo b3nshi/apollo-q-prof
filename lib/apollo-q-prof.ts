@@ -1,19 +1,36 @@
-import { ApolloServer } from "apollo-server";
+import { ApolloServer as DefaultServer, Config, CorsOptions } from "apollo-server";
 import { gqlOutgoingRequests } from "./handlers/gql-outgoing-requests";
 import { performance } from "perf_hooks";
 import jsonLogger from "./loggers/json-logger";
 
-export const ApolloQProf  = (apolloConfig: any) => {
-  const dataSources = apolloConfig.dataSources();
-  const wrappedDataSources = Object.keys(dataSources)
-    .reduce((wrap: any, dataSource: any) => {
-      if (dataSources.hasOwnProperty(dataSource)) {
-        wrap[dataSource] = gqlOutgoingRequests(dataSources[dataSource]);
-      } else {
-        wrap[dataSource] = dataSources[dataSource];
-      }
-      return wrap;
-    }, {});
+interface ConfigProf {
+  ApolloInstance?: any;
+}
+
+export const ApolloQProf  = (
+  apolloConfig: Config & { cors?: CorsOptions | boolean },
+  config?: ConfigProf
+) => {
+  let wrappedDataSources: any;
+  
+  if (apolloConfig.dataSources) {
+    const dataSources = apolloConfig.dataSources();
+    wrappedDataSources = Object.keys(dataSources)
+      .reduce((wrap, dataSource) => {
+        if (dataSources.hasOwnProperty(dataSource)) {
+          wrap[dataSource] = gqlOutgoingRequests(dataSources[dataSource]);
+        } else {
+          wrap[dataSource] = dataSources[dataSource];
+        }
+        return wrap;
+      }, {});
+  }
+
+  let ApolloServer = DefaultServer;
+
+  if (config && config.ApolloInstance) {
+    ApolloServer = config.ApolloInstance;
+  }
 
   return new ApolloServer({
     ...apolloConfig,

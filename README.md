@@ -1,5 +1,5 @@
 # Query profiler for Apollo Server 2
-![](https://img.shields.io/static/v1.svg?label=Latest&message=2.0.0&color=green)
+![](https://img.shields.io/static/v1.svg?label=Latest&message=2.1.0&color=green)
 
 ##### Dependencies
 ![](https://img.shields.io/static/v1.svg?label=Apollo%20Server&message=2.2.3&color=red)
@@ -13,6 +13,17 @@
 1. `npm i -D apollo-q-prof`
 2. Replace `app = new ApolloServer({configData})` by `app = ApolloQProf({configData})`
 3. Run your application and that's all!
+
+## Configuration (Experimental)
+
+There is a second [optional] argument to provide a configuration.
+The current version only accept an `ApolloServer` object. So if you are using `apollo-server-express` you can provide you object and version and use it.
+
+```
+{
+  ApolloInstance: ApolloServer
+}
+```
 
 ## Running the UI
 Apollo-Q-Prof provide an UI to be able to see the generated `json` file with the information about the request/responses. To be able to use it you need to do the following:
@@ -62,6 +73,5 @@ Apollo-Q-Prof provide an UI to be able to see the generated `json` file with the
 
 There are some improvements that we are going to include in upcoming versions like:
 * Timeline for each request
-* Optional configuration
 * Real-time monitoring
 * Statitics and Graphs

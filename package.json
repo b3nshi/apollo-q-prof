@@ -1,8 +1,8 @@
 {
   "name": "apollo-q-prof",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Apollo query profiler",
-  "keywords": [],
+  "keywords": ["performance", "apollo-server", "graphql"],
   "main": "dist/apollo-q-prof.js",
   "types": "dist/apollo-q-prof.d.ts",
   "scripts": {
@@ -27,6 +27,9 @@
     "tslint-eslint-rules": "5.4.0",
     "typescript": "3.3.3"
   },
+  "engines": {
+    "node": ">=8.5.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/b3nshi/apollo-q-prof.git"
@@ -35,5 +38,6 @@
     "url": "https://github.com/b3nshi/apollo-q-prof/issues"
   },
   "homepage": "https://github.com/b3nshi/apollo-q-prof#readme",
-  "author": "b3nshi <b3nshi@gmail.com>"
+  "author": "b3nshi <b3nshi@gmail.com>",
+  "license": "MIT"
 }
