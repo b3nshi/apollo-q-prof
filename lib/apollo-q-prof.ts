@@ -10,7 +10,7 @@ import {
 
 interface ConfigProf {
   apolloInstance?: any;
-  enabled: boolean;
+  enabled?: boolean;
 }
 
 export const ApolloQProf  = (
