@@ -1,6 +1,6 @@
 {
   "name": "apollo-q-prof",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Apollo query profiler",
   "keywords": ["performance", "apollo-server", "graphql"],
   "main": "dist/apollo-q-prof.js",

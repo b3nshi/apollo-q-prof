@@ -2,6 +2,11 @@ import { ApolloServer as DefaultServer, Config, CorsOptions } from "apollo-serve
 import { gqlOutgoingRequests } from "./handlers/gql-outgoing-requests";
 import { performance } from "perf_hooks";
 import jsonLogger from "./loggers/json-logger";
+import {
+  EXECUTION_TIME,
+  START_TIMESTAMP,
+  ENDS_TIMESTAMP
+} from "./constants";
 
 interface ConfigProf {
   apolloInstance?: any;
@@ -61,7 +66,9 @@ export const ApolloQProf  = (
       formatResponse: (response: any, query: any) => {
         const hrend = performance.now();
         jsonLogger.addKey("response", {
-          "execution-time": `${hrend - query.context.hrstart}ms`
+          [START_TIMESTAMP]: query.context.hrstart,
+          [ENDS_TIMESTAMP]: hrend,
+          [EXECUTION_TIME]: `${hrend - query.context.hrstart}`
         });
 
         jsonLogger.printOutput && jsonLogger.printOutput();

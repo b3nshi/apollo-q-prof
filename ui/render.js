@@ -1,3 +1,10 @@
+const EXECUTION_TIME = "executionTime";
+const START_TIMESTAMP = "startTimestamp";
+const ENDS_TIMESTAMP = "endsTimestamp";
+const PARAMETERS     = "params";
+const METHOD_NAME    = "method";
+const DATA_SOURCE    = "dataSource";
+
 window.onload = () => {
   let openedFile;
 
@@ -23,7 +30,7 @@ window.onload = () => {
       li.innerHTML = '<span class="trigger"></span>' +
       '<div class="title">' +
       '<div><span class="query">' + item.request.query.substring(0, 50) + '...</span></div>' + 
-      '<div><span class="execution-time">' +  item.response['execution-time'] + '</span></div>' +
+      '<div><span class="execution-time">' +  item.response[EXECUTION_TIME] + 'ms</span></div>' +
       '</div>';
       let divContent = document.createElement('div');
       divContent.setAttribute('class', 'content');
@@ -34,10 +41,10 @@ window.onload = () => {
       
       Array.from(item.outgoingRequests).forEach((out) => {
         content += '<div class="out">';
-        content += '<span class="data-source">' + out.dataSource + '</span>';
-        content += '<span class="method">' + out.method + '</span>';
-        content += '<span class="arguments">' + out.args + '</span>';
-        content += '<span class="execution-time">' + out['execution-time'] + '</span>';
+        content += '<span class="data-source">' + out[DATA_SOURCE] + '</span>';
+        content += '<span class="method">' + out[METHOD_NAME] + '</span>';
+        content += '<span class="arguments">' + out[PARAMETERS] + '</span>';
+        content += '<span class="execution-time">' + out[EXECUTION_TIME] + 'ms</span>';
         content += '</div>';
       });
       content += '</div>';
@@ -68,7 +75,7 @@ window.onload = () => {
     }
   }
 
-  fetch("/apollo-q-prof.json")
+  fetch("/sample.json")
     .then(function(response) {
       return response.json();
     })

@@ -21,8 +21,31 @@ The current version only accept an `ApolloServer` object. So if you are using `a
 
 ```
 {
-  ApolloInstance: ApolloServer
+  apolloInstance: ApolloServer,
+  enabled: Boolean
 }
+```
+
+Example:
+```
+// Just an example
+import ApolloServer from 'apollo-server-express';
+
+const server = ApolloQProf({
+  schema,
+  debug: true,
+  dataSources: () => dataSources,
+  context: (): AppContextWithoutDataSources => {
+    return {
+      locale: "",
+      authHeaders: {},
+      cookies: {}
+    };
+  }
+}, {
+  apolloInstance: ApolloServer,
+  enabled: true
+});
 ```
 
 ## Running the UI
@@ -50,8 +73,10 @@ Apollo-Q-Prof provide an UI to be able to see the generated `json` file with the
   {
     "outgoingRequests": [
       {
-        "args": "[ 'parameter1',... ,'paramenterN' ]",
-        "execution-time": "time in ms",
+        "startTimestamp": "0",
+        "endsTimestamp": "1",
+        "params": "[ 'parameter1',... ,'paramenterN' ]",
+        "executionTime": "time in ms",
         "method": "",
         "dataSource": ""
       },
@@ -63,7 +88,9 @@ Apollo-Q-Prof provide an UI to be able to see the generated `json` file with the
       "query": "{...}"
     },
     "response": {
-      "execution-time": "time in ms"
+      "startTimestamp": "0",
+      "endsTimestamp": "1",
+      "executionTime": "time in ms"
     }
   },
 ]

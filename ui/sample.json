@@ -1,9 +1,11 @@
 [
   {
     "outgoingRequests": [{
-      "args": "[ arg1, arg2, ... ,argN ]",
+      "startTimestamp": "0",
+      "endsTimestamp": "1",
+      "params": "[ arg1, arg2, ... ,argN ]",
       "dataSource": "dataSourceName",
-      "execution-time": "10ms",
+      "executionTime": "10",
       "method": "methodName"
     }],
     "request": {
@@ -12,7 +14,9 @@
       "query": "{ someQuery }"
     },
     "response": {
-      "execution-time": "0ms"
+      "startTimestamp": "0",
+      "endsTimestamp": "1",
+      "executionTime": "1"
     }
   }
 ]
