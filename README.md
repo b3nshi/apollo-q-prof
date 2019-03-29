@@ -48,6 +48,8 @@ const server = ApolloQProf({
 });
 ```
 
+The service is `enabled` by default
+
 ## Running the UI
 Apollo-Q-Prof provide an UI to be able to see the generated `json` file with the information about the request/responses. To be able to use it you need to do the following:
 

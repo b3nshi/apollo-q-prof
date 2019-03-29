@@ -23,7 +23,7 @@ export const ApolloQProf  = (
     ApolloServer = config.apolloInstance;
   }
 
-  if (config && config.enabled) {
+  if (config && (config.enabled !== false)) {
     let wrappedDataSources: any;
     
     if (apolloConfig.dataSources) {
